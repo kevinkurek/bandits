@@ -4,8 +4,12 @@ import matplotlib.pyplot as plt
 from numpy import genfromtxt
 import glob
 
-path = r'/Users/jamesledoux/Documents/bandits/results' # use your path
+path = r'/Users/kevinkurek/Desktop/RL/bandits/results' # use your path
 all_files = glob.glob(path + "/*.csv")
+
+best_epsilon = '/Users/kevinkurek/Desktop/RL/bandits/results/epsilon_greedy_100_5_0.1_1500_raw.csv'
+best_ucb = '/Users/kevinkurek/Desktop/RL/bandits/results/bayesian_100_5_1.5_1500_raw.csv'
+best_exp = '/Users/kevinkurek/Desktop/RL/bandits/results/exp3_100_5_0.1_1500_raw.csv'
 
 all_dataframes = []
 
@@ -68,10 +72,6 @@ plt.rc('font', size=12)
 
 plt.savefig(path + '/all_plots.png')
 
-best_epsilon = '/Users/jamesledoux/Documents/bandits/results/epsilon_greedy_100_5_0.1_1500_raw.csv'
-best_ucb = '/Users/jamesledoux/Documents/bandits/results/bayesian_100_5_1.5_1500_raw.csv'
-best_exp = '/Users/jamesledoux/Documents/bandits/results/exp3_100_5_0.1_1500_raw.csv'
-
 epsilon = genfromtxt(best_epsilon, delimiter=',')
 ucb = genfromtxt(best_ucb, delimiter=',')
 exp = genfromtxt(best_exp, delimiter=',')
@@ -107,9 +107,6 @@ plt.xlabel('Time Step')
 plt.ylabel('Reward ("Liked" Movies)')
 plt.legend()
 plt.savefig(path + '/cumulative_rewards.png')
-
-
-
 
 
 fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(20,9))

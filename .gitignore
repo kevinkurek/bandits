@@ -11,6 +11,8 @@ data/ml-20m/movies.csv
 data/ml-20m/tags.csv
 data/ml-20m.zip
 
+*.csv
+*.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
